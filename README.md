@@ -1,5 +1,5 @@
 # MenuAcordeonCSS
-Menu acordeon simples para testes.
+Menu acorddion simples para testes.
 
 🔗 <a href="https://lumadart.github.io/MenuAcordeonCSS/" target="_blank">Visualize o projeto clicando aqui</a>
 #

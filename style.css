@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+}
+/*-variaveis-*/
+:root {
+ --light-txt:#e4e4e4;
+ --med-txt:#555555;
+ --purple:#b62fdf;
+ --gray-01: #292929;
+ --gray-02: #1B1B1B;
+ --gray-transparency: linear-gradient(to top, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8));
+}
+
+body {
+ color: var(--light-txt);
+ background-image: var(--gray-transparency), url("./nge02.jpg");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-position: center center;
+ font-size: 1.4rem;
+ line-height: 2.5rem;
+ font-weight: normal;
+}
+
+html {
+ font-size: 62.5%;
+}
+
+/*-container-*/
+.container {
+ margin: 80px auto;
+ display: flex;
+ flex-direction: row;
+ max-width: 1050px;
+ height: 800px;
+ overflow: hidden;
+ border-radius: 10px;
+ background: var(--gray-02);
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+/*-menu-*/
+.menu_accordion {
+ padding: 40px;
+ display: flex;
+ flex-direction: column;
+ gap: 2rem;
+ width: 100%;
+ max-width: 600px;
+}
+
+.menu_accordion h1 {
+ font-size: 3.5rem;
+ text-align: center;
+ text-transform: uppercase;
+ line-height: 4.5rem;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+/*-pergunta-*/
+.question {
+ background: var(--gray-01);
+ position: relative;
+ padding: 0 20px 10px;
+ border-radius: 8px;
+ overflow: hidden;
+}
+
+.question input {
+ appearance: none;
+}
+
+.question label {
+ cursor: pointer;
+}
+
+.question label h3 {
+ font-size: 1.5rem;
+ letter-spacing: .1rem;
+ padding-bottom: 10px;
+}
+
+.question label::after {
+ content: "\002B";
+ position: absolute;
+ right: 20px;
+ top: 20px;
+ font-size: 2.5rem;
+ color:var(--med-txt);
+ transition:.5s;
+}
+.question:hover label::after{
+ color: var(--purple);
+}
+.question input:checked~label::after {
+ transform: rotate(135deg);
+ color: var(--purple);
+}
+
+/*-resposta-*/
+.question .answer {
+ max-height: 0;
+ transition: .5s;
+ overflow: hidden;
+}
+
+.question input:checked~.answer {
+ max-height: 100vh;
+}
+
+/*-imagem-*/
+.nge_img {
+ width: 450px;
+ height: 800px;
+ object-fit: cover;
+ object-position: center;
+}
+
+/*-responsividade-*/
+
+@media(max-width:1100px) {
+
+ .container {
+  max-width: 600px;
+  min-width: 530px;
+  flex-direction: column;
+  height: auto;
+ }
+
+ .nge_img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+  order:1;
+ }
+
+ .menu_accordion {
+  order:2;
+ }
+}
